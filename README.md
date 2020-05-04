@@ -21,6 +21,13 @@ set -- -f; source bootstrap.sh
 ```
 To update later on, just run that command again.
 
+### Git-free install
+
+To install these dotfiles without Git:
+
+```bash
+cd; curl -#L https://github.com/henriklg/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh}
+```
 
 ### Perhaps unecessary step
 copy .bash profile to home directory and add 
