@@ -21,6 +21,8 @@ set -- -f; source bootstrap.sh
 ```
 To update later on, just run that command again.
 
+
+### Perhaps unecessary step
 copy .bash profile to home directory and add 
 
 ```bash
@@ -29,3 +31,8 @@ if [ -f ~/.bash_profile ]; then
 fi
 ```
 in .bashrc
+
+
+### TODO
+- Add .ssh?
+- Append .bash_profile source in .bashrc automatically
