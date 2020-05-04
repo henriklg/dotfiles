@@ -16,7 +16,7 @@ echo -ne "Hello, $USER. today is, "; date
 #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]> '
 
 # Shell prompt based on solarized dark theme and git integration
-source .bash_pompt
+source .bash_prompt
 
 
 ###########
@@ -25,6 +25,7 @@ source .bash_pompt
 
 
 # Dir & ls
+alias ..="cd .."
 alias pd="pwd"
 alias hy="history"
 alias ll='ls -alF'
