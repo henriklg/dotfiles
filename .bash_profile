@@ -2,16 +2,27 @@
 # WELCOME SCREEN #
 ##################
 
+
 export USER="Henrik Gjestang"
 echo -ne "Hello, $USER. today is, "; date
 
-# Show only last directory, not full path
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]> '
+
+###############
+# BASH PROMPT #
+###############
+
+
+# Minimalistisc shell with only last directory, not full path
+#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]> '
+
+# Shell prompt based on solarized dark theme and git integration
+source .bash_pompt
 
 
 ###########
-# Aliases #
+# ALIAS #
 ###########
+
 
 # Dir & ls
 alias pd="pwd"
@@ -60,12 +71,20 @@ alias gmv="git mv"
 
 
 
-###########
-# Scripts #
-###########
+##########
+# SCIPTS #
+##########
+
 
 # Source my scripts
 for f in ~/.my_scripts/*.sh; do source $f; done
+
+
+
+########
+# MISC #
+########
+
 
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend;
