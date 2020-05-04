@@ -10,7 +10,15 @@ function doIt() {
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
 		-avh --no-perms . ~;
+
 	source ~/.bash_profile;
+	
+	# add source bash_profile in bashrc
+	addprofile="if [ -f ~/.bash_profile ]; then . ~/.bash_profile; fi"
+	lastline=$( tail -n 1 ~/.bashrc )
+	if [ "$lastline" != "$addprofile" ]; then
+		echo $addprofile >> ~/.bashrc
+	fi
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
