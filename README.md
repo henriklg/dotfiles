@@ -41,5 +41,4 @@ in .bashrc
 
 
 ### TODO
-- Add .ssh?
-- Append .bash_profile source in .bashrc automatically
+- Add .ssh/config?
