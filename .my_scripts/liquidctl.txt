@@ -1,0 +1,29 @@
+GitHub repo: https://github.com/jonasmalacofilho/liquidctl       (running v1.2.0 - latest version is 1.3.3)
+
+liquidctl list
+#####################
+Device ID 0: Corsair RM850i (experimental)
+Device ID 1: NZXT Kraken X (X42, X52, X62 or X72)
+Device ID 2: NZXT Smart Device (V1)
+
+
+sudo liquidctl -d 1 status
+#####################
+NZXT Kraken X (X42, X52, X62 or X72)
+├── Liquid temperature     28.2  °C
+├── Fan speed               476  rpm
+├── Pump speed             1899  rpm
+└── Firmware version      5.0.2  
+
+
+Kraken X62
+#####################
+sudo liquidctl -d 1 set fan speed 20
+sudo liquidctl -d 1 set pump speed 20
+sudo liquidctl -d 1 set fan speed 45 25  50 55  55 75  60 100
+udo liquidctl -d 1 set pump speed 50 50  55 70  60 70  70 100
+
+Smart Device (V1)
+#####################
+sudo liquidctl -d 2 set fan3 speed 20
+sudo liquidctl -d 2 set fan2 speed 20
