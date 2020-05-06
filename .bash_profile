@@ -58,7 +58,7 @@ alias juno="jupyter notebook"
 alias jula="jupyter-lab"
 alias sshuio='ssh -YC henriklg@login.ifi.uio.no'
 # git
-alias gst="git stash"
+alias gst="git status"
 alias gdi="git diff"
 alias gdt="git difftool"
 alias glo="git log"
