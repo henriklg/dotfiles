@@ -18,7 +18,7 @@ function fans() {
 
   elif [[ $1 == "performance" ]]; then
     echo "setting fan curve to performance"
-    sudo liquidctl -d 1 set fan speed 30 40  35 40  37 80  41 90  43 100
+    sudo liquidctl -d 1 set fan speed 30 40  35 40  37 80  41 90  42 100
     sudo liquidctl -d 1 set pump speed 30 70  35 70  40 80  42 100  50 100
     sudo liquidctl -d 2 set fan2 speed 45
     sudo liquidctl -d 2 set fan3 speed 45
