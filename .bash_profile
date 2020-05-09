@@ -55,7 +55,7 @@ alias del='rm --target-directory=$HOME/.Trash/'
 # Applications
 alias py="python3"
 alias juno="jupyter notebook"
-alias jula="jupyter-lab"
+alias jula="jupyter lab"
 alias sshuio='ssh -YC henriklg@login.ifi.uio.no'
 # git
 alias gst="git status"
