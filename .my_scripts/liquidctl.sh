@@ -42,3 +42,24 @@ function fans() {
     fi
   fi
 }
+
+# 2825D1 blue
+# E00FA7 purple
+function lights() {
+  # No arguments
+  if [[ $# -eq 0 ]]; then
+    echo "Missing argument."
+  
+  # 1 argument
+  elif [[ $1 == "off" ]]; then
+    sudo liquidctl -d 2 set led color off
+
+  elif [[ $1 == "fixed" ]]; then
+    sudo liquidctl -d 2 set led color fixed af5a2f
+    
+  elif [[ $1 == "fading" ]]; then
+    sudo liquidctl -d 2 set led color fading E00FA7 2825D1 --speed slower
+    liquidctl -d 1 set ring color fading 2825D1 E00FA7
+    liquidctl -d 1 set logo color fixed E00FA7
+  fi
+}
