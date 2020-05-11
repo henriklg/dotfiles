@@ -23,10 +23,11 @@ function fans() {
     sudo liquidctl -d 2 set fan2 speed 45
     sudo liquidctl -d 2 set fan3 speed 45
 
-  elif [[ $1 == "liquid" ]]; then
+  elif [[ $1 == "watch" ]]; then
     # get liquid temperature
-    liq_temp="$(sudo liquidctl -d 1 status | grep Liquid)"
-    echo "${liq_temp}"
+    watch -d -n 1 sudo liquidctl -d 1 status
+    #liq_temp="$(sudo liquidctl -d 1 status | grep Liquid)"
+    #echo "${liq_temp}"
 
   elif [[ $# -eq 1 ]]; then
     # check if range [0,100]
