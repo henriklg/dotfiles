@@ -59,7 +59,7 @@ function lights() {
     
   elif [[ $1 == "fading" ]]; then
     sudo liquidctl -d 2 set led color fading E00FA7 2825D1 --speed slower
-    liquidctl -d 1 set ring color fading 2825D1 E00FA7
-    liquidctl -d 1 set logo color fixed E00FA7
+    sudo liquidctl -d 1 set ring color fading 2825D1 E00FA7
+    sudo liquidctl -d 1 set logo color fixed E00FA7
   fi
 }
