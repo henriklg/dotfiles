@@ -11,8 +11,8 @@ function fans() {
   elif [[ $1 == "silent" ]]; then
     echo "setting fan curve to silent"
     # [temperature percentage]
-    sudo liquidctl -d 1 set fan speed 30 30  35 30  40 50  45 60  50 100
-    sudo liquidctl -d 1 set pump speed 30 50  35 50  40 60  45 70  50 100
+    sudo liquidctl -d 1 set fan speed 30 30  35 30  40 50  43 100  50 100
+    sudo liquidctl -d 1 set pump speed 30 50  35 50  40 50  43 100  50 100
     sudo liquidctl -d 2 set fan2 speed 30
     sudo liquidctl -d 2 set fan3 speed 30
 
