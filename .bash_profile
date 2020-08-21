@@ -2,7 +2,6 @@
 # WELCOME SCREEN #
 ##################
 
-test
 
 export USER="Henrik Gjestang"
 echo -ne "Hello, $USER. today is, "; date
