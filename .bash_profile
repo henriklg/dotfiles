@@ -26,6 +26,7 @@ source ~/.bash_prompt;
 
 # Dir & ls
 alias ..="cd .."
+alias ...="cd ../.."
 alias pd="pwd"
 alias hy="history"
 alias ll='ls -alF'
