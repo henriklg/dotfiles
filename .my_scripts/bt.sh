@@ -9,7 +9,7 @@ function bt() {
 		echo "Disconnecting headphones"
 		bluetoothctl disconnect 2C:41:A1:49:82:12 > /dev/null 2>&1
 	else
-		echo "No arguments"
+		echo "No arguments given. Options are 'con' for connect or 'dis' for disconnect."
 	fi
 }
 
