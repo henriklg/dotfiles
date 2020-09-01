@@ -11,7 +11,6 @@ echo -ne "Hello, $USER. today is, "; date
 # BASH PROMPT #
 ###############
 
-
 # Minimalistisc shell with only last directory, not full path
 #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]> '
 
