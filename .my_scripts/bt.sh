@@ -8,6 +8,9 @@ function bt() {
 	elif [[ $1 == "dis" ]]; then
 		echo "Disconnecting headphones"
 		bluetoothctl disconnect 2C:41:A1:49:82:12 > /dev/null 2>&1
+	else
+		echo "No arguments"
+	fi
 }
 
 
