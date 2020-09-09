@@ -37,6 +37,7 @@ alias down='cd ~/Downloads'
 alias mus='cd ~/Music'
 alias pix='cd ~/Pictures'
 alias root='sudo -i'
+alias copy='xclip -selection clipboard'
 
 # Sudo
 alias install='sudo apt-get install'
@@ -44,9 +45,9 @@ alias remove='sudo apt-get remove'
 alias purge='sudo apt-get remove --purge'
 alias update='sudo apt-get update'
 alias clean='sudo apt-get autoclean && sudo apt-get autoremove'
+alias liq='sudo liquidctl'
 # Run last command with sudo
 alias fuck='sudo $(fc -ln -1)'
-alias liq='sudo liquidctl'
 
 # Misc
 alias x='exit'
