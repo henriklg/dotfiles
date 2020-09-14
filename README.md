@@ -29,16 +29,8 @@ To install these dotfiles without Git:
 cd; curl -#L https://github.com/henriklg/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh}
 ```
 
-### Perhaps unecessary step
-copy .bash profile to home directory and add 
-
-```bash
-if [ -f ~/.bash_profile ]; then
-    . ~/.bash_profile
-fi
-```
-in .bashrc
 
 
 ### TODO
+- ~~Look through complete .bashrc file for bash_profile, instead of only last line~~
 - Add .ssh/config?
