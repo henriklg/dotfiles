@@ -15,10 +15,17 @@ function doIt() {
 	
 	# add source bash_profile in bashrc
 	addprofile="if [ -f ~/.bash_profile ]; then . ~/.bash_profile; fi"
-	lastline=$( tail -n 1 ~/.bashrc )
-	if [ "$lastline" != "$addprofile" ]; then
+	
+	# checks all lines
+	if ! grep -Fxq "$addprofile" ~/.bashrc; then
 		echo $addprofile >> ~/.bashrc
 	fi
+	
+	# faster, but only checks last line
+	#lastline=$( tail -n 1 ~/.bashrc )
+	#if [ "$lastline" != "$addprofile" ]; then
+	#	echo $addprofile >> ~/.bashrc
+	#fi
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
