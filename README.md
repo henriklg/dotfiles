@@ -17,7 +17,7 @@ source bootstrap.sh
 Alternatively, to update while avoiding the confirmation prompt:
 
 ```bash
-set -- -f; source bootstrap.sh
+source bootstrap.sh -f
 ```
 To update later on, just run that command again.
 
