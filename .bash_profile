@@ -86,13 +86,11 @@ for f in ~/.my_scripts/*.sh; do source $f; done
 ########
 # MISC #
 ########
-
-
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend;
-
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
-
+# Remove error bell sound
+bind 'set bell-style none'
 
 # Hide conda base environment?
