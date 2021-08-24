@@ -57,7 +57,6 @@ alias del='rm --target-directory=$HOME/.Trash/'
 alias py="python3"
 alias juno="jupyter notebook"
 alias jula="jupyter lab"
-alias sshuio='ssh -YC henriklg@login.ifi.uio.no'
 # git
 alias gst="git status"
 alias gdi="git diff"
@@ -93,4 +92,4 @@ shopt -s cdspell;
 # Remove error bell sound
 bind 'set bell-style none'
 
-# Hide conda base environment?
+
