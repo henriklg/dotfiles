@@ -4,7 +4,7 @@
 
 
 export USER="Henrik Gjestang"
-echo -ne "Hello, $USER. today is, "; date
+echo -ne "Hello. Today is, "; date
 
 
 ###############
@@ -44,6 +44,7 @@ alias install='sudo apt-get install'
 alias remove='sudo apt-get remove'
 alias purge='sudo apt-get remove --purge'
 alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
 alias clean='sudo apt-get autoclean && sudo apt-get autoremove'
 alias liq='sudo liquidctl'
 # Run last command with sudo
