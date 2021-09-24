@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # GitHub repo: https://github.com/jonasmalacofilho/liquidctl
 # (running v1.2.0 - latest version is 1.3.3)

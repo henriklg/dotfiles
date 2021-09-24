@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function climb() {
   if [[ $# -eq 0 ]]; then

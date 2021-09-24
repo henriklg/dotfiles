@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # used for connecting to bluetooth headset
 function bt() {
