@@ -4,7 +4,7 @@
 
 
 export USER="Henrik Gjestang"
-echo -ne "Hello. Today is, "; date
+#echo -ne "Hello. Today is, "; date
 
 
 ###############
@@ -21,7 +21,6 @@ source ~/.bash_prompt;
 ###########
 # ALIAS #
 ###########
-
 
 # Dir & ls
 alias ..="cd .."
@@ -61,26 +60,24 @@ alias jula="jupyter lab"
 # git
 alias gst="git status"
 alias gdi="git diff"
-alias gdt="git difftool"
-alias glo="git log"
 alias gpu="git push"
+alias gfe="git fetch"
 alias gpl="git pull"
 alias gch="git checkout"
 alias gco="git commit -m"
 alias gad="git add"
 alias grm="git rm"
 alias gmv="git mv"
-
+alias glo="git log"
+alias gtr="git log --graph --oneline --decorate"
 
 
 ##########
 # SCIPTS #
 ##########
 
-
 # Source my scripts
 for f in ~/.my_scripts/*.sh; do source $f; done
-
 
 
 ########
