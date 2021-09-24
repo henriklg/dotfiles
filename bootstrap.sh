@@ -6,7 +6,7 @@ cd "$(dirname "${BASH_SOURCE}")";
 git pull origin merge_zsh;
 
 MYSHELL=$(readlink /proc/$$/exe | sed -e 's/\/.*\///g')
-echo "Currently on ${MYSHELL}."
+echo "Currently on ${MYSHELL} shell."
 
 function doIt() {
 	rsync --exclude ".git/" \
@@ -19,8 +19,8 @@ function doIt() {
 	addprofile="if [ -f ~/.${MYSHELL}_profile ]; then . ~/.${MYSHELL}_profile; fi"
 	
 	# checks all lines
-	if ! grep -Fxq "$addprofile" ~/.$($MYSHELL)rc; then
-		echo $addprofile >> ~/.$($MYSHELL)rc
+	if ! grep -Fxq "$addprofile" ~/.${MYSHELL}rc; then
+		echo $addprofile >> ~/.${MYSHELL}rc
 	fi
 }
 
