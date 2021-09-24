@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 ##################
 # WELCOME SCREEN #
 ##################
