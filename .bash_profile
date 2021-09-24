@@ -58,7 +58,7 @@ alias py="python3"
 alias juno="jupyter notebook"
 alias jula="jupyter lab"
 # git
-alias gst="git status"
+alias gst="git status -sb"
 alias gdi="git diff"
 alias gpu="git push"
 alias gfe="git fetch"
