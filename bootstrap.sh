@@ -16,7 +16,7 @@ function doIt() {
 	source ~/.${MYSHELL}_profile;
 	
 	# add source bash_profile in bashrc
-	addprofile="if [ -f ~/.${MYSHELL}_profile ]; then . ~/.${MYSHELL}_profile; fi"
+	addprofile="\nif [ -f ~/.${MYSHELL}_profile ]; then . ~/.${MYSHELL}_profile; fi"
 	
 	# checks all lines
 	if ! grep -Fxq "$addprofile" ~/.${MYSHELL}rc; then
