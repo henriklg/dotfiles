@@ -33,4 +33,7 @@ cd; curl -#L https://github.com/henriklg/dotfiles/tarball/master | tar -xzv --st
 
 ### TODO
 - ~~Look through complete .bashrc file for bash_profile, instead of only last line~~
-- Add .ssh/config?
+- ~~Make bootstrap.sh compatible with zsh and separate zsh_profile~~
+- Add dotfiles for powershell/wsl2 in posh branch
+- Separate out duplicate code/aliases from zsh/bash profiles scripts
+- Include functionality for full setup of [zsh, oh-my-zsh, powerline10k, path-variables (especially poetry and pyenv), addons and theme]
