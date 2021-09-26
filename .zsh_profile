@@ -46,19 +46,19 @@ alias del='rm --target-directory=$HOME/.Trash/'
 alias py="python3"
 alias juno="jupyter notebook"
 alias jula="jupyter lab"
-alias sshuio='ssh -YC henriklg@login.ifi.uio.no'
 # git
-alias gst="git status"
+alias gst="git status -sb"
 alias gdi="git diff"
-alias gdt="git difftool"
-alias glo="git log"
 alias gpu="git push"
+alias gfe="git fetch"
 alias gpl="git pull"
 alias gch="git checkout"
 alias gco="git commit -m"
 alias gad="git add"
 alias grm="git rm"
 alias gmv="git mv"
+alias glo="git log"
+alias gtr="git log --graph --oneline --decorate"
 
 
 ##########
