@@ -3,7 +3,7 @@
 # pull in the latest version and copy the files to your home folder.
 cd "$(dirname "${BASH_SOURCE}")";
 
-git pull origin merge_zsh;
+git pull origin master;
 
 MYSHELL=$(readlink /proc/$$/exe | sed -e 's/\/.*\///g')
 echo "Currently on ${MYSHELL} shell."
