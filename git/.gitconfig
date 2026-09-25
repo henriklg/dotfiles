@@ -1,0 +1,23 @@
+[user]
+    name = Henrik Gjestang
+    email = henrik.logj@gmail.com
+
+[core]
+    editor = vim
+    autocrlf = input
+
+[pull]
+    rebase = false
+
+[push]
+    default = current
+
+[color]
+    ui = auto
+
+[alias]
+    st = status -sb
+    di = diff
+    co = checkout
+    br = branch
+    lg = log --graph --oneline --decorate

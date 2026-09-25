@@ -1,39 +1,91 @@
-# Henrik’s dotfiles
+# Henrik's dotfiles
 
-### Using Git and the bootstrap script
+Managed with [GNU Stow](https://www.gnu.org/software/stow/). Each top-level directory is a stow *package* — running `stow <package>` creates symlinks from `~` into the package directory.
 
-You can clone the repository wherever you want. (I like to keep it in `~/Documents/dotfiles`, with `~/dotfiles` as a symlink.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
+## Repository structure
 
-```bash
-git clone git@github.com:henriklg/dotfiles.git && cd dotfiles && source bootstrap.sh
+```
+dotfiles/
+├── zsh/
+│   ├── .zshrc                  # Main shell config (Oh My Zsh + sources below)
+│   └── .zsh/
+│       ├── aliases.zsh         # Shell aliases
+│       ├── exports.zsh         # Environment variables
+│       ├── functions.zsh       # Shell functions (climb, extract, …)
+│       └── host-local.zsh.example  # Template — copy and fill in per machine
+│
+├── git/
+│   └── .gitconfig              # Git identity and aliases
+│
+├── aws/
+│   └── .aws/
+│       └── config              # AWS SSO profiles (no credentials)
+│
+├── claude/
+│   └── .claude/
+│       ├── settings.json       # Claude Code (CLI) settings
+│       └── commands/           # Custom slash commands
+│
+├── bootstrap.sh                # One-shot Mac setup script
+├── .gitignore
+└── README.md
 ```
 
-To update, `cd` into your local `dotfiles` repository and then:
+## How GNU Stow works
 
-```bash
-source bootstrap.sh
+Stow creates symlinks from your home directory into this repo.
+
+```
+dotfiles/zsh/.zshrc   →  stow -t ~ zsh  →  ~/.zshrc -> ~/dev/dotfiles/zsh/.zshrc
 ```
 
-Alternatively, to update while avoiding the confirmation prompt:
+The `-t ~` flag is required. Without it, stow defaults to the *parent* of the
+stow directory (`~/dev` when the repo lives at `~/dev/dotfiles`), which is wrong.
+
+Activate all packages at once from inside `~/dev/dotfiles`:
 
 ```bash
-source bootstrap.sh -f
+stow -t ~ zsh git aws claude
 ```
-To update later on, just run that command again.
 
-### Git-free install
-
-To install these dotfiles without Git:
+To remove links (without deleting files from the repo):
 
 ```bash
-cd; curl -#L https://github.com/henriklg/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh}
+stow -t ~ -D zsh git aws claude
 ```
 
+## Bootstrapping a new Mac
 
+```bash
+git clone git@github.com:henriklg/dotfiles.git ~/dev/dotfiles
+cd ~/dev/dotfiles
+./bootstrap.sh
+```
 
-### TODO
-- ~~Look through complete .bashrc file for bash_profile, instead of only last line~~
-- ~~Make bootstrap.sh compatible with zsh and separate zsh_profile~~
-- Add dotfiles for powershell/wsl2 in posh branch
-- Separate out duplicate code/aliases from zsh/bash profiles scripts
-- Include functionality for full setup of [zsh, oh-my-zsh, powerline10k, path-variables (especially poetry and pyenv), addons and theme]
+The script installs Homebrew, stow, git, awscli, and Oh My Zsh, then runs `stow` for all packages.
+
+## One-time migration on an existing machine
+
+If you already have live dotfiles in `~`, you need to remove them before stow can create symlinks:
+
+```bash
+rm ~/.zshrc ~/.gitconfig
+rm ~/.aws/config
+rm ~/.claude/settings.json
+
+cd ~/dev/dotfiles
+stow -t ~ zsh git aws claude
+```
+
+## Where to place secrets
+
+**Never commit secrets.** Machine-specific settings go in `~/.zsh/host-local.zsh` — copy the example file and fill it in:
+
+```bash
+cp ~/dev/dotfiles/zsh/.zsh/host-local.zsh.example ~/.zsh/host-local.zsh
+# then edit ~/.zsh/host-local.zsh
+```
+
+`host-local.zsh` is in `.gitignore` and will not be committed.
+
+AWS credentials (`~/.aws/credentials`) are managed by SSO and are also ignored by git.

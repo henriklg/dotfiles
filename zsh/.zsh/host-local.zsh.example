@@ -1,0 +1,22 @@
+# Copy this file to ~/.zsh/host-local.zsh and customise for this machine.
+# This file is intentionally NOT committed — it holds machine-specific
+# settings and secrets that vary between hosts.
+
+# Example: proxy settings
+# export HTTPS_PROXY=http://proxy.example.com:8080
+# export NO_PROXY=localhost,127.0.0.1
+
+# Example: override CA cert paths
+# export SSL_CERT_FILE="$HOME/.ca-certs/custom.crt"
+# export REQUESTS_CA_BUNDLE="$HOME/.ca-certs/custom.pem"
+
+# Example: personal API keys
+# export OPENAI_API_KEY="sk-..."
+# export ANTHROPIC_API_KEY="sk-ant-..."
+
+# Example: extra PATH entries specific to this machine
+# export PATH="$HOME/bin:$PATH"
+
+# Example: work-specific toolchain
+# export JAVA_HOME="/opt/homebrew/opt/openjdk"
+# export PATH="$JAVA_HOME/bin:$PATH"

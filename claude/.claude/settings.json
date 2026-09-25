@@ -1,0 +1,45 @@
+{
+  "awsAuthRefresh": "aws sso login --profile claude-code-prod-profile-dap-940856917377",
+  "env": {
+    "AWS_PROFILE": "claude-code-prod-profile-dap-940856917377",
+    "CLAUDE_CODE_USE_BEDROCK": "1",
+    "AWS_REGION": "eu-west-1",
+    "ANTHROPIC_MODEL": "arn:aws:bedrock:eu-west-1:940856917377:application-inference-profile/t1lz5sy9jn3r",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "arn:aws:bedrock:eu-west-1:940856917377:application-inference-profile/t1lz5sy9jn3r",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "arn:aws:bedrock:eu-west-1:940856917377:application-inference-profile/tvxrxbfwc0qx",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "arn:aws:bedrock:eu-west-1:940856917377:application-inference-profile/hwmjrcr5g3jb",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "16384",
+    "MAX_THINKING_TOKENS": "1024",
+    "CLAUDE_CODE_EFFORT_LEVEL": "auto"
+  },
+  "permissions": {
+    "deny": [
+      "WebFetch",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(npm install *)",
+      "Bash(pip install *)",
+      "Bash(npx *)"
+    ],
+    "disableBypassPermissionsMode": "disable"
+  },
+  "allowManagedHooksOnly": true,
+  "allowManagedPermissionRulesOnly": true,
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "skill-creator@claude-plugins-official": true
+  },
+  "sandbox": {
+    "enabled": true,
+    "allowUnsandboxedCommands": false,
+    "network": {
+      "allowedDomains": []
+    }
+  },
+  "tui": "fullscreen",
+  "theme": "dark",
+  "autoCompactEnabled": true
+}
