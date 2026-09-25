@@ -1,0 +1,15 @@
+# AWS — credentials are managed by SSO and must never be committed
+.aws/credentials
+.aws/sso/cache/
+.aws/cli/cache/
+
+# Machine-specific zsh overrides (copy from host-local.zsh.example)
+.zsh/host-local.zsh
+
+# macOS
+.DS_Store
+
+# Editor artifacts
+.vscode/
+*.swp
+*~
