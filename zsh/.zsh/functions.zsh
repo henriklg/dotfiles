@@ -1,5 +1,5 @@
-function climb() {
-  local steps=${1:-1}
+function u() {
+  local steps=${#1}
   local count=0
   while [[ $count -lt $steps ]]; do
     cd ..

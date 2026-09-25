@@ -1,6 +1,4 @@
 # Navigation
-alias ..="cd .."
-alias ...="cd ../.."
 alias pd="pwd"
 alias hy="history"
 alias home='cd'
