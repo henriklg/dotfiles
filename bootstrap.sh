@@ -29,7 +29,7 @@ echo "==> Cloning / pulling dotfiles..."
 if [ ! -d "$DOTFILES" ]; then
   git clone git@github.com:henriklg/dotfiles.git "$DOTFILES"
 else
-  git -C "$DOTFILES" pull origin master
+  git -C "$DOTFILES" pull origin main
 fi
 
 echo "==> Linking dotfiles with stow..."
