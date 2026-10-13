@@ -17,7 +17,8 @@ if ! command -v brew &>/dev/null; then
 fi
 
 echo "==> Installing packages..."
-brew install stow git awscli
+brew install stow git awscli eza uv
+brew install --cask font-hack-nerd-font
 
 # Install Oh My Zsh (unattended — won't overwrite an existing install)
 if [ ! -d "$HOME/.oh-my-zsh" ]; then

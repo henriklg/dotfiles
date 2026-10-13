@@ -62,7 +62,7 @@ cd ~/dev/dotfiles
 ./bootstrap.sh
 ```
 
-The script installs Homebrew, stow, git, awscli, and Oh My Zsh, then runs `stow` for all packages.
+The script installs Homebrew, stow, git, awscli, eza, uv, and Oh My Zsh, then runs `stow` for all packages.
 
 ## One-time migration on an existing machine
 
