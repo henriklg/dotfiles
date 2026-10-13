@@ -16,6 +16,9 @@ if ! command -v brew &>/dev/null; then
   fi
 fi
 
+echo "==> Ensuring user Applications directory exists..."
+mkdir -p "$HOME/Applications"
+
 echo "==> Installing packages..."
 brew install stow git awscli eza uv
 brew install --cask font-hack-nerd-font
