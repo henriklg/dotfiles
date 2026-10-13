@@ -1,12 +1,4 @@
-function u() {
-  local steps=${#1}
-  local count=0
-  while [[ $count -lt $steps ]]; do
-    cd ..
-    ((count++))
-  done
-}
-
+# Pakk ut en fil basert på filtype (tar, zip, 7z, rar, etc.)
 function extract() {
   if [ -f "$1" ]; then
     case $1 in
