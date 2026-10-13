@@ -5,3 +5,6 @@ export UV_SYSTEM_CERTS=1
 export SSL_CERT_FILE="$HOME/.ca-certs/ca-bundle.crt"
 export REQUESTS_CA_BUNDLE="$HOME/.ca-certs/cacert_mio.pem"
 export NODE_EXTRA_CA_CERTS="$HOME/.ca-certs/cacert_mio.pem"
+
+# Install casks in user Applications directory
+export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
