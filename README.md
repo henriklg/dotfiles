@@ -1,10 +1,10 @@
 # Henrik's dotfiles
 
-Managed with [GNU Stow](https://www.gnu.org/software/stow/). Each top-level directory is a stow *package* — running `stow <package>` creates symlinks from `~` into the package directory.
+Managed with [GNU Stow](https://www.gnu.org/software/stow/), which creates symlinks from `~` into this repo. macOS only.
 
 ## Repository structure
 
-```
+```text
 dotfiles/
 ├── zsh/
 │   ├── .zshrc                  # Main shell config (Oh My Zsh + sources below)
@@ -24,34 +24,11 @@ dotfiles/
 ├── claude/
 │   └── .claude/
 │       ├── settings.json       # Claude Code (CLI) settings
-│       └── commands/           # Custom slash commands
+│       └── statusline.sh       # Status line script (model + progress)
 │
 ├── bootstrap.sh                # One-shot Mac setup script
 ├── .gitignore
 └── README.md
-```
-
-## How GNU Stow works
-
-Stow creates symlinks from your home directory into this repo.
-
-```
-dotfiles/zsh/.zshrc   →  stow -t ~ zsh  →  ~/.zshrc -> ~/dev/dotfiles/zsh/.zshrc
-```
-
-The `-t ~` flag is required. Without it, stow defaults to the *parent* of the
-stow directory (`~/dev` when the repo lives at `~/dev/dotfiles`), which is wrong.
-
-Activate all packages at once from inside `~/dev/dotfiles`:
-
-```bash
-stow -t ~ zsh git aws claude
-```
-
-To remove links (without deleting files from the repo):
-
-```bash
-stow -t ~ -D zsh git aws claude
 ```
 
 ## Bootstrapping a new Mac
@@ -62,20 +39,11 @@ cd ~/dev/dotfiles
 ./bootstrap.sh
 ```
 
-The script installs Homebrew, stow, git, awscli, eza, uv, and Oh My Zsh, then runs `stow` for all packages.
+The script installs Homebrew, stow, git, awscli, eza, uv, and Oh My Zsh, then runs `stow` for all packages. Any existing plain dotfiles that would conflict are automatically backed up with a `.bak` suffix before linking.
 
 ## One-time migration on an existing machine
 
-If you already have live dotfiles in `~`, you need to remove them before stow can create symlinks:
-
-```bash
-rm ~/.zshrc ~/.gitconfig
-rm ~/.aws/config
-rm ~/.claude/settings.json
-
-cd ~/dev/dotfiles
-stow -t ~ zsh git aws claude
-```
+Just run `bootstrap.sh` — it backs up any conflicting dotfiles automatically and then links everything.
 
 ## Where to place secrets
 
