@@ -4,10 +4,10 @@
     "AWS_PROFILE": "claude-code-prod-profile-dap-940856917377",
     "CLAUDE_CODE_USE_BEDROCK": "1",
     "AWS_REGION": "eu-west-1",
-    "ANTHROPIC_MODEL": "arn:aws:bedrock:eu-west-1:940856917377:application-inference-profile/t1lz5sy9jn3r",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "arn:aws:bedrock:eu-west-1:940856917377:application-inference-profile/t1lz5sy9jn3r",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "arn:aws:bedrock:eu-west-1:940856917377:application-inference-profile/tvxrxbfwc0qx",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "arn:aws:bedrock:eu-west-1:940856917377:application-inference-profile/hwmjrcr5g3jb",
+    "ANTHROPIC_MODEL": "arn:aws:bedrock:eu-west-1:940856917377:application-inference-profile/fh419hv9hf57",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "arn:aws:bedrock:eu-west-1:940856917377:application-inference-profile/fh419hv9hf57",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "arn:aws:bedrock:eu-west-1:940856917377:application-inference-profile/58twjb9o2495",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "arn:aws:bedrock:eu-west-1:940856917377:application-inference-profile/etivrvvxlefa",
     "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "16384",
     "MAX_THINKING_TOKENS": "1024",
     "CLAUDE_CODE_EFFORT_LEVEL": "auto"
@@ -23,6 +23,7 @@
     ],
     "disableBypassPermissionsMode": "disable"
   },
+  "model": "opus",
   "allowManagedHooksOnly": true,
   "allowManagedPermissionRulesOnly": true,
   "statusLine": {
