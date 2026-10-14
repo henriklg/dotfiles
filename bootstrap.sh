@@ -3,6 +3,7 @@
 set -euo pipefail
 
 DOTFILES="$HOME/dev/dotfiles"
+STOW_PKGS=(zsh git aws claude)
 
 echo "==> Checking prerequisites..."
 
@@ -39,18 +40,27 @@ fi
 echo "==> Linking dotfiles with stow..."
 cd "$DOTFILES"
 
+# .DS_Store files in stow packages cause conflicts; remove them all up front.
+find . -name ".DS_Store" -delete
+
 # Remove any plain files that would conflict with stow symlinks.
 # (Skip if already a symlink — stow manages it.)
-for f in ~/.zshrc ~/.gitconfig; do
-  if [ -f "$f" ] && [ ! -L "$f" ]; then
-    echo "    Backing up $f -> ${f}.bak"
-    mv "$f" "${f}.bak"
-  fi
+for pkg in "${STOW_PKGS[@]}"; do
+  for src in "$pkg"/* "$pkg"/.*; do
+    [[ -e "$src" ]] || continue
+    name="${src#$pkg/}"
+    [[ "$name" == "." || "$name" == ".." ]] && continue
+    target="$HOME/$name"
+    if [ -f "$target" ] && [ ! -L "$target" ]; then
+      echo "    Backing up $target -> ${target}.bak"
+      mv "$target" "${target}.bak"
+    fi
+  done
 done
 
-# -t ~ is required: without it stow defaults to the parent of the stow
+# "-t ~" is required: without it stow defaults to the parent of the stow
 # directory (~/dev), not the home directory.
-stow -t ~ zsh git aws claude
+stow -t ~ "${STOW_PKGS[@]}"
 
 echo ""
 echo "Done! Open a new terminal or run:"
