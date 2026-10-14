@@ -23,7 +23,7 @@
     ],
     "disableBypassPermissionsMode": "disable"
   },
-  "model": "opus",
+  "model": "sonnet",
   "allowManagedHooksOnly": true,
   "allowManagedPermissionRulesOnly": true,
   "statusLine": {
