@@ -23,7 +23,7 @@
     ],
     "disableBypassPermissionsMode": "disable"
   },
-  "model": "sonnet",
+  "model": "haiku",
   "allowManagedHooksOnly": true,
   "allowManagedPermissionRulesOnly": true,
   "statusLine": {
@@ -37,7 +37,10 @@
     "enabled": true,
     "allowUnsandboxedCommands": false,
     "network": {
-      "allowedDomains": []
+      "allowedDomains": [
+        "netezza-prod.fremtind.no",
+        "dvhnps2p.prod-int.sparebank1.no"
+      ]
     }
   },
   "tui": "fullscreen",
