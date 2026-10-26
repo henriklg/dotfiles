@@ -19,3 +19,17 @@ function extract() {
     echo "'$1' is not a valid file!"
   fi
 }
+
+# Oppdater Homebrew-pakker; fjerner quarantine på claude og restarter ollama ved oppdatering
+function update() {
+  brew update || return 1
+  local outdated
+  outdated=$(brew outdated --quiet) || return 1
+  brew upgrade --yes || return 1
+  if grep -qx claude-code <<< "$outdated"; then
+    xattr -d com.apple.quarantine "$(which claude)"
+  fi
+  if grep -qx ollama <<< "$outdated"; then
+    brew services restart ollama
+  fi
+}
