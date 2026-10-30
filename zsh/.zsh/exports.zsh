@@ -8,3 +8,6 @@ export NODE_EXTRA_CA_CERTS="$HOME/.ca-certs/cacert_mio.pem"
 
 # Install casks in user Applications directory
 export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
+
+# Claude sandbox
+export PATH=$PATH:$HOME/.claude-sandbox
