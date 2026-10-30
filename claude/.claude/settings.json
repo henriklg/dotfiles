@@ -36,6 +36,11 @@
   "sandbox": {
     "enabled": true,
     "allowUnsandboxedCommands": false,
+    "filesystem": {
+      "allowWrite": [
+        "~/.cache/uv"
+      ]
+    },
     "network": {
       "allowedDomains": [
         "netezza-prod.fremtind.no",
